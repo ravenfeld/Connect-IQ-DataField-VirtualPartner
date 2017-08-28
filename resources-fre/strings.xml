@@ -1,0 +1,15 @@
+<strings>
+    <string id="AppName">Ultra Partner</string>
+    <string id="AvaTps">AVA TPS</string>
+    <string id="RetTps">RET TPS</string>
+    <string id="ChronoEstimate">CHRONO ESTIME</string>
+    <string id="TpsRest">TPS RESTANT</string>
+    <string id="distanceTitle">Distance (km)</string>
+    <string id="distanceDesc">Distance en kilomètre</string>
+    <string id="timeTitle">Temps de course (hh:mm:ss)</string>
+    <string id="timeDesc">Format hh:mm:ss</string>
+    <string id="chronoEstimateTitle">Affichage du chrono estimé</string>
+    <string id="chronoEstimateDesc">Ceci est un chrono estimé</string>
+    <string id="scalePartnerTitle">Ecart ave le Partner (hh:mm:ss)</string>
+    <string id="scalePartnerDesc">Quand votre partner devient invisble</string>
+</strings>

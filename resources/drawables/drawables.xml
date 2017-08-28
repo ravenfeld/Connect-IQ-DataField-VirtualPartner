@@ -1,0 +1,13 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+    <bitmap id="Runner" filename="runner.png" dithering="none" >
+        <palette disableTransparency="false">
+            <color>ff0000</color>
+        </palette>
+    </bitmap>
+    <bitmap id="VirtualPartner" filename="runner.png" dithering="none" >
+        <palette disableTransparency="false">
+            <color>c8c8c8</color>
+        </palette>
+    </bitmap>    
+</drawables>

@@ -1,0 +1,15 @@
+<strings>
+    <string id="AppName">Ultra Partner</string>
+    <string id="AvaTps">TIME AHD</string>
+    <string id="RetTps">TIME BHD</string>
+    <string id="ChronoEstimate">ESTIMATE CHRONO</string>
+    <string id="TpsRest">ETA</string>
+    <string id="distanceTitle">Distance (km)</string>
+    <string id="distanceDesc">Distance in km</string>
+    <string id="timeTitle">Time of course (hh:mm:ss)</string>
+    <string id="timeDesc">Formatage (hh:mm:ss)</string>
+    <string id="chronoEstimateTitle">Display estimate chrono</string>
+    <string id="chronoEstimateDesc">linear estimate time</string>
+   	<string id="scalePartnerTitle">Scale Partner (hh:mm:ss)</string>
+    <string id="scalePartnerDesc">When the partner become invisible</string>
+</strings>
