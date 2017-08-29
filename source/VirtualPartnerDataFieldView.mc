@@ -29,16 +29,17 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
         chronoEstimate = Ui.loadResource(Rez.Strings.ChronoEstimate);
         tpsRest = Ui.loadResource(Rez.Strings.TpsRest);
         
-        distanceParameter = App.getApp().getProperty("distance");
+        distanceParameter = App.getApp().getProperty("distance").toFloat();
         displayChronoEstimate = App.getApp().getProperty("displayChronoEstimate");
         var scalePartner = App.getApp().getProperty("scalePartner");
 
         var timeParameter = App.getApp().getProperty("time");
 
 		var timeExtract = extract(timeParameter);
-		if(timeExtract[0]==null || timeExtract[1]==null || timeExtract[2]==null){
+		if(distanceParameter ==null ||timeExtract[0]==null || timeExtract[1]==null || timeExtract[2]==null){
 			errorFormat=true;
 			allureParameter = 0;
+			distanceParameter = 0;
 		}else{
 			errorFormat=false;
 			var time = 	timeExtract[0]*60*60+timeExtract[1]*60+timeExtract[2];
@@ -108,7 +109,7 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
 		dc.fillRectangle(0,0,dc.getWidth(),dc.getHeight());
 		dc.setColor(Gfx.COLOR_BLACK,Gfx.COLOR_WHITE);
     	if(errorFormat){
-    		dc.drawText(center_x, center_y, Gfx.FONT_SYSTEM_SMALL, "Error Format time",  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);				
+    		dc.drawText(center_x, center_y, Gfx.FONT_SYSTEM_SMALL, "Error parsing format",  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);				
     	}else{
     		dc.drawLine(0, y, dc.getWidth(), y);
 			dc.drawLine(0, y*2, dc.getWidth(), y*2);
