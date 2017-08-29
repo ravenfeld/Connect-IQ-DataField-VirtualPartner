@@ -1,13 +1,13 @@
 <resources> 
 	<properties> 
-		<property id="distance" type="number">10</property>
+		<property id="distance" type="string">10</property>
 		<property id="time" type="string">0:40:00</property>
 		<property id="displayChronoEstimate" type="boolean">true</property>
 		<property id="scalePartner" type="string">1:00:00</property>
 	</properties>
 	<settings>
 		<setting propertyKey="@Properties.distance" title="@Strings.distanceTitle" prompt="@Strings.distanceDesc">
-			<settingConfig type="numeric" />
+			<settingConfig type="alphaNumeric" />
 		</setting>
 		<setting propertyKey="@Properties.time" title="@Strings.timeTitle" prompt="@Strings.timeDesc">
 			<settingConfig type="alphaNumeric" />
