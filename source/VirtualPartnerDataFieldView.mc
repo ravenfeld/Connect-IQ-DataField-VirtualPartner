@@ -11,7 +11,7 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
 	hidden var gapTime=0;
 	hidden var runnerIcon;
 	hidden var virtualPartnerIcon;	
-	hidden var heightFontIcon;
+	hidden var heightFontMedium;
 	hidden var displayChronoEstimate;
 	hidden var avaTps;
 	hidden var retTps;
@@ -73,7 +73,7 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
 	}
 
     function onLayout(dc) {
-		heightFontIcon = dc.getFontHeight(Gfx.FONT_NUMBER_MEDIUM);
+		heightFontMedium = dc.getFontHeight(Gfx.FONT_NUMBER_MEDIUM);
     }
 
     function compute(info) {
@@ -126,16 +126,22 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
 				dc.setColor(Gfx.COLOR_BLACK,Gfx.COLOR_TRANSPARENT);
 				gap=avaTps;
 			}
-			dc.drawText(center_x, y/2+12-heightFontIcon/2, Gfx.FONT_SYSTEM_TINY, gap,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
-			dc.drawText(center_x, y/2+10, Gfx.FONT_NUMBER_MEDIUM, timeToString(gapTime), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
+			var font=Gfx.FONT_NUMBER_MEDIUM;
+			
+			if(heightFontMedium<=45 && heightFontMedium>=y*0.70){
+				font=Gfx.FONT_NUMBER_MILD;
+			}
+			
+			dc.drawText(center_x, y/2-y/4, Gfx.FONT_SYSTEM_TINY, gap,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
+			dc.drawText(center_x, y/2+y/6,font, timeToString(gapTime), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
 		
 			if(estimateTimeRest>=0){
 				if(displayChronoEstimate){
-					dc.drawText(center_x, y*2+9, Gfx.FONT_SYSTEM_TINY, chronoEstimate,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);		
-					dc.drawText(center_x, y*2+y/2, Gfx.FONT_NUMBER_MEDIUM, timeToString(estimateTime), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
+					dc.drawText(center_x, y*2+y/2-y/2.8, Gfx.FONT_SYSTEM_TINY, chronoEstimate,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);		
+					dc.drawText(center_x, y*2+y/2, font, timeToString(estimateTime), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
 				}else{
-					dc.drawText(center_x, y*2+9, Gfx.FONT_SYSTEM_TINY, tpsRest,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);		
-					dc.drawText(center_x, y*2+y/2, Gfx.FONT_NUMBER_MEDIUM, timeToString(estimateTimeRest), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);	
+					dc.drawText(center_x, y*2+y/2-y/2.8, Gfx.FONT_SYSTEM_TINY, tpsRest,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);		
+					dc.drawText(center_x, y*2+y/2, font, timeToString(estimateTimeRest), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);	
 				}
 			}
 		
