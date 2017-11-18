@@ -2,7 +2,7 @@
 	<properties> 
 		<property id="distance" type="string">10</property>
 		<property id="time" type="string">0:40:00</property>
-		<property id="displayChronoEstimate" type="boolean">true</property>
+		<property id="display" type="number">0</property>
 		<property id="scalePartner" type="string">1:00:00</property>
 	</properties>
 	<settings>
@@ -12,9 +12,13 @@
 		<setting propertyKey="@Properties.time" title="@Strings.timeTitle" prompt="@Strings.timeDesc">
 			<settingConfig type="alphaNumeric" />
 		</setting> 
-		<setting propertyKey="@Properties.displayChronoEstimate" title="@Strings.chronoEstimateTitle" prompt="@Strings.chronoEstimateDesc">
-			<settingConfig type="boolean" />
-		</setting>  
+		<setting propertyKey="@Properties.display" title="@Strings.displayTitle" prompt="@Strings.displayDesc">
+            <settingConfig type="list">
+            	<listEntry value="0">@Strings.TpsRest</listEntry>
+            	<listEntry value="1">@Strings.ChronoEstimate</listEntry>
+            	<listEntry value="2">@Strings.Pace</listEntry>
+            </settingConfig>
+        </setting>
 		<setting propertyKey="@Properties.scalePartner" title="@Strings.scalePartnerTitle" prompt="@Strings.scalePartnerDesc">
 			<settingConfig type="alphaNumeric" />
 		</setting> 

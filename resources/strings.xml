@@ -8,8 +8,9 @@
     <string id="distanceDesc">Distance in km format km.m</string>
     <string id="timeTitle">Time of course (hh:mm:ss)</string>
     <string id="timeDesc">Formatage (hh:mm:ss)</string>
-    <string id="chronoEstimateTitle">Display estimate chrono</string>
-    <string id="chronoEstimateDesc">linear estimate time</string>
+    <string id="displayTitle">Display info bottom</string>
+    <string id="displayDesc">info bottom</string>
    	<string id="scalePartnerTitle">Scale Partner (hh:mm:ss)</string>
     <string id="scalePartnerDesc">When the partner become invisible</string>
+    <string id="Pace">min/km</string>
 </strings>

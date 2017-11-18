@@ -8,8 +8,9 @@
     <string id="distanceDesc">Distance en kilomètre avec le formatage km.m</string>
     <string id="timeTitle">Temps de course (hh:mm:ss)</string>
     <string id="timeDesc">Format hh:mm:ss</string>
-    <string id="chronoEstimateTitle">Affichage du chrono estimé</string>
-    <string id="chronoEstimateDesc">Ceci est un chrono estimé</string>
-    <string id="scalePartnerTitle">Ecart ave le Partner (hh:mm:ss)</string>
+    <string id="displayTitle">Choix de l'information</string>
+    <string id="displayDesc">Information à afficher en dessous</string>
+    <string id="scalePartnerTitle">Ecart avec le Partner (hh:mm:ss)</string>
     <string id="scalePartnerDesc">Quand votre partner devient invisble</string>
+    <string id="Pace">min/km</string>
 </strings>
