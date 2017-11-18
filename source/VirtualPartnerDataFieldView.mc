@@ -12,13 +12,15 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
 	hidden var runnerIcon;
 	hidden var virtualPartnerIcon;	
 	hidden var heightFontMedium;
-	hidden var displayChronoEstimate;
+	hidden var display;
 	hidden var avaTps;
 	hidden var retTps;
 	hidden var chronoEstimate;
 	hidden var tpsRest;
+	hidden var pace;
 	hidden var errorFormat=false;
 	hidden var timeScalePartner;
+	hidden var allureRunner;
 		
     function initialize() {
         
@@ -28,9 +30,10 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
         retTps = Ui.loadResource(Rez.Strings.RetTps);
         chronoEstimate = Ui.loadResource(Rez.Strings.ChronoEstimate);
         tpsRest = Ui.loadResource(Rez.Strings.TpsRest);
+        pace = Ui.loadResource(Rez.Strings.Pace);
         
         distanceParameter = App.getApp().getProperty("distance").toFloat();
-        displayChronoEstimate = App.getApp().getProperty("displayChronoEstimate");
+        display = App.getApp().getProperty("display");
         var scalePartner = App.getApp().getProperty("scalePartner");
 
         var timeParameter = App.getApp().getProperty("time");
@@ -79,8 +82,7 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
     function compute(info) {
 		var distanceRunner = info.elapsedDistance;
 		var mpsRunner = info.averageSpeed;
-		
-		var allureRunner; 
+		 
 		if(distanceRunner==null){
 			distanceRunner=0;
 		}else{
@@ -136,12 +138,15 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
 			dc.drawText(center_x, y/2+y/6,font, timeToString(gapTime), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
 		
 			if(estimateTimeRest>=0){
-				if(displayChronoEstimate){
+				if(display == 0){
+					dc.drawText(center_x, y*2+y/2-y/2.8, Gfx.FONT_SYSTEM_TINY, tpsRest,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);		
+					dc.drawText(center_x, y*2+y/2, font, timeToString(estimateTimeRest), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
+				}else if(display == 1){
 					dc.drawText(center_x, y*2+y/2-y/2.8, Gfx.FONT_SYSTEM_TINY, chronoEstimate,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);		
 					dc.drawText(center_x, y*2+y/2, font, timeToString(estimateTime), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
 				}else{
-					dc.drawText(center_x, y*2+y/2-y/2.8, Gfx.FONT_SYSTEM_TINY, tpsRest,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);		
-					dc.drawText(center_x, y*2+y/2, font, timeToString(estimateTimeRest), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);	
+					dc.drawText(center_x, y*2+y/2-y/2.8, Gfx.FONT_SYSTEM_TINY, pace,  Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);		
+					dc.drawText(center_x, y*2+y/2, font, timeToString(allureRunner), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
 				}
 			}
 		
