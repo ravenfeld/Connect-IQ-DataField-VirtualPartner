@@ -45,8 +45,15 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
 			distanceParameter = 0;
 		}else{
 			errorFormat=false;
-			var time = 	timeExtract[0]*60*60+timeExtract[1]*60+timeExtract[2];
-			allureParameter = (time/distanceParameter).toLong();
+			var paceParameter = App.getApp().getProperty("pace");
+			var allureExtract = extractPace(paceParameter);
+			
+			if(allureExtract[0]==null || allureExtract[0]*60+allureExtract[1]==0){
+				var time = 	timeExtract[0]*60*60+timeExtract[1]*60+timeExtract[2];
+				allureParameter = (time/distanceParameter).toLong();
+			}else{
+				allureParameter = allureExtract[0]*60+allureExtract[1];
+			}
 		}
 		
 		var scalePartnerExtract = extract(scalePartner);
@@ -75,6 +82,21 @@ class VirtualPartnerDataFieldView extends Ui.DataField {
 		return timeExtract;
 	}
 
+	function extractPace(timeString){
+		var timeExtract = new [2];
+		var separatorIndex;
+		for( var i=0;i<2;i++){
+			separatorIndex = timeString.find(":");
+			if(separatorIndex!=null){
+				timeExtract[i] = timeString.substring(0, separatorIndex).toNumber();
+				timeString = timeString.substring(separatorIndex+1,timeString.length());
+			}else if(i==1 && timeExtract[0]!=null){
+				timeExtract[i] = timeString.toNumber();
+			}
+		}
+		return timeExtract;
+	}
+	
     function onLayout(dc) {
 		heightFontMedium = dc.getFontHeight(Gfx.FONT_NUMBER_MEDIUM);
     }

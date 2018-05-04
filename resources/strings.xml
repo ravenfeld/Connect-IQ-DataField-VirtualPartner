@@ -8,6 +8,8 @@
     <string id="distanceDesc">Distance in km format km.m</string>
     <string id="timeTitle">Time of course (hh:mm:ss)</string>
     <string id="timeDesc">Formatage (hh:mm:ss)</string>
+    <string id="paceTitle">Pace (mm:ss)</string>
+    <string id="paceDesc">indicate a pace if you prefer, 00:00 or empty for disable</string>
     <string id="displayTitle">Display info bottom</string>
     <string id="displayDesc">info bottom</string>
    	<string id="scalePartnerTitle">Scale Partner (hh:mm:ss)</string>
