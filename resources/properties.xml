@@ -2,6 +2,7 @@
 	<properties> 
 		<property id="distance" type="string">10</property>
 		<property id="time" type="string">0:40:00</property>
+		<property id="pace" type="string">00:00</property>
 		<property id="display" type="number">0</property>
 		<property id="scalePartner" type="string">1:00:00</property>
 	</properties>
@@ -10,6 +11,9 @@
 			<settingConfig type="alphaNumeric" />
 		</setting>
 		<setting propertyKey="@Properties.time" title="@Strings.timeTitle" prompt="@Strings.timeDesc">
+			<settingConfig type="alphaNumeric" />
+		</setting> 
+		<setting propertyKey="@Properties.pace" title="@Strings.paceTitle" prompt="@Strings.paceDesc">
 			<settingConfig type="alphaNumeric" />
 		</setting> 
 		<setting propertyKey="@Properties.display" title="@Strings.displayTitle" prompt="@Strings.displayDesc">

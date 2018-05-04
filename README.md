@@ -10,6 +10,7 @@ Do not hesitate to remind me of problems or proposals
 ![0](https://github.com/ravenfeld/Connect-IQ-DataField-VirtualPartner/blob/develop/screenshot/0.png)
 ![0](https://github.com/ravenfeld/Connect-IQ-DataField-VirtualPartner/blob/develop/screenshot/1.png)
 ![0](https://github.com/ravenfeld/Connect-IQ-DataField-VirtualPartner/blob/develop/screenshot/2.png)
+![0](https://github.com/ravenfeld/Connect-IQ-DataField-VirtualPartner/blob/develop/screenshot/3.png)
 
 # Link
 [Connect-IQ-DataField-VirtualPartner](https://apps.garmin.com/fr/apps/30760684-38bb-4e79-8568-3ac8b39bdd06)
