@@ -1,3 +1,6 @@
+# MIGRATED
+https://gitlab.com/ravenfeld/Connect-IQ-DataField-VirtualPartner
+
 # Connect-IQ-DataField-VirtualPartner
 If you put more than 8:55 to the kilometer for your race the virtual partner of garmin will not work.
 So use this datafiled, the problem that configuration is done via your phone.
